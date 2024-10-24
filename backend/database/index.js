@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { MongoMemoryServer } = require("mongodb-memory-server");
 
-if (process.env.DB_URL && process.env.NODE_ENV !== "production") {
+if (process.env.DB_URL && process.env.NODE_ENV === "production") {
   mongoose
     .connect(
       process.env.DB_URL,
