@@ -1,8 +1,8 @@
 on:
   push:
-    tags:
-      - v*.**
     branches: [ "test-workflow" ]
+    tags:
+      - v*.*.*
 
 jobs:
   build:
