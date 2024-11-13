@@ -1,9 +1,16 @@
-FROM node:latest
-COPY /backend /backend
+FROM node:20.14
 WORKDIR /backend
-RUN npm install && npm audit fix && npm run start
+COPY backend/package.json .
+RUN npm install && npm audit fix
+COPY backend/ ./
+EXPOSE 3000
+CMD ["npm", "start"]
 
-FROM node:latest
-COPY /frontend /frontend
+FROM node:20.14
 WORKDIR /frontend
-RUN npm install && npm audit fix && npm run dev
+COPY frontend/. ./
+RUN npm install
+COPY ./frontend .
+EXPOSE 5173 
+ENTRYPOINT ["npm"] 
+CMD ["run", "dev", "--", "--host", "0.0.0.0", "--port", "5173"]
