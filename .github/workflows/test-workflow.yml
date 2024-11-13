@@ -1,7 +1,8 @@
 on:
   push:
     tags:
-      - v3
+      - v*.*.*
+    #branches: [ "test-workflow" ]
 
 jobs:
   build:
