@@ -2,7 +2,7 @@ on:
   push:
     branches: [ "test-workflow" ]
     tags:
-      - v19898
+      - v1989
 
 jobs:
   build:
