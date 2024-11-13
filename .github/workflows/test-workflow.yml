@@ -1,12 +1,11 @@
 on:
-  push:
-    tags:
-      - v*.*.*
-      - branches: [ "test-workflow" ]
+  [push, pull_request]:
+    branches: [ "test-workflow" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
     - uses: actions/checkout@v4
 
