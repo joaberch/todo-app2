@@ -2,8 +2,6 @@ on:
   push:
     branches: 
       - "test-workflow"
-    tags:
-      - "v*.*.*"  # Déclenche l'action sur les tags qui suivent ce format
 
 jobs:
   build:
