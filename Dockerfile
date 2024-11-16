@@ -15,8 +15,10 @@ EXPOSE 5173
 
 # Stage 3 : App
 FROM node:20.14 AS app
+WORKDIR /app
 COPY --from=frontend /frontend ./frontend
 COPY --from=backend /backend ./backend
 COPY ./run-app.sh ./
 CMD [ "./run-app.sh"]
+CMD ["bash", "run-app.sh"]
 
