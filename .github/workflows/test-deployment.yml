@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref, 'refs/tags/v') ##TODO check the format is X.Y.Z and they are number
+    if: startsWith(github.ref, 'refs/tags/v') #TODO check the format is X.Y.Z and they are number
     steps:
     - uses: actions/checkout@v4
 
@@ -34,9 +34,6 @@ jobs:
         npm run build --if-present
         npm run test --if-present
 
-    - name: Publish
-        uses: actions/publish-immutable-action@v0.0.4
-
     #- name: Audit
     #  run: ping -n 1 127.0.0.1 #TODO
 
@@ -48,3 +45,6 @@ jobs:
 
     #- name: Build the docker image
     #  run: docker build . --file Dockerfile --tag todo-app:$(date +%s)
+
+    #- name: Publish
+    #    uses: actions/publish-immutable-action@v0.0.4
