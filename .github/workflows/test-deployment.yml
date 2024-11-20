@@ -54,6 +54,6 @@ jobs:
       run: docker build . --file Dockerfile --tag todo-app:latest #TODO : date +%S differs when executed later
 
     - name: Push Docker image to Docker Hub
-    #docker tag todo-app:$(date +%s) ${{ secrets.DOCKER_USERNAME }}/todo-app:$(date +%s)
       run: |
-        docker push todo-app:latest
+        docker tag todo-app:latest ${{ secrets.DOCKER_USERNAME }}/todo-app:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}todo-app:latest
