@@ -43,8 +43,8 @@ jobs:
     #- name: Unit Testing
     #  run: ping -n 1 127.0.0.1 #TODO 
 
-    #- name: Build the docker image
-    #  run: docker build . --file Dockerfile --tag todo-app:$(date +%s)
+    - name: Build the docker image
+      run: docker build . --file Dockerfile --tag todo-app:$(date +%s)
 
     #- name: Publish
     #    uses: actions/publish-immutable-action@v0.0.4
