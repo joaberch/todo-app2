@@ -41,7 +41,8 @@ jobs:
     #  run: ping -n 1 127.0.0.1 #TODO
     - name: Install eslint
       run: | #if shareable config
-        npm init @eslint/config@latest 
+        cd ./backend
+        npm npm init @eslint/config@latest
         npx eslint /backend/index.js
 
     #- name: Unit Testing
