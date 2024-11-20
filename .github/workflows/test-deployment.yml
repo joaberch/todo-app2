@@ -42,7 +42,7 @@ jobs:
     - name: Install eslint
       run: | #if shareable config
         cd ./backend
-        npm npm init @eslint/config@latest
+        npm init @eslint/config@latest
         npx eslint /backend/index.js
 
     #- name: Unit Testing
