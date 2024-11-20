@@ -57,7 +57,7 @@ jobs:
     - name: Push Docker image to Docker Hub
     #docker tag todo-app:$(date +%s) ${{ secrets.DOCKER_USERNAME }}/todo-app:$(date +%s)
       run: |
-        docker image push ${{ secrets.DOCKER_USERNAME }}/todo-app:$(date +%s)
+        docker image push todo-app:$(date +%s)
 
     #- name: Publish
     #    uses: actions/publish-immutable-action@v0.0.4
