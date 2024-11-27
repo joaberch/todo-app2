@@ -39,11 +39,6 @@ jobs:
 
     #- name: Linting
     #  run: ping -n 1 127.0.0.1 #TODO
-    - name: Install eslint
-      run: | #if shareable config
-        cd ./backend
-        npm init @eslint/config@latest
-        npx eslint /backend/index.js
 
     #- name: Unit Testing
     #  run: ping -n 1 127.0.0.1 #TODO 
@@ -58,7 +53,7 @@ jobs:
     - name: Build the docker image
       run: docker build . --file Dockerfile --tag todo-app:latest #TODO : date +%S differs when executed later
 
-    - name: Push Docker image to Docker Hub
+    - name: Push Docker image to Docker Hub #TODO : push 2 images, une latest et une version en archive disponible
       run: |
         docker tag todo-app:latest ${{ vars.DOCKER_USERNAME}}/todo-app:latest
         docker push ${{ vars.DOCKER_USERNAME}}/todo-app:latest
